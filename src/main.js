@@ -52,7 +52,7 @@ store.subscribe(() => {
     .map(n => n == me ? `${me} (*)` : n)
     .map(n => `<li>${n}</li>`)
     .join("\n")
-
+  nickView.querySelector('#nick').value = me
 })
 
 // to easily debug in browser's console
