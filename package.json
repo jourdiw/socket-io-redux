@@ -1,0 +1,37 @@
+{
+  "name": "socketio_tp",
+  "version": "1.0.0",
+  "description": "socket.io with a redux touch",
+  "main": "server.js",
+  "scripts": {
+    "watchify": "watchify -vd -p browserify-hmr -e src/main.js -o dist/build.js",
+    "serve": "http-server -o -s -c 1 -a localhost",
+    "dev": "npm-run-all --parallel watchify serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.enseeiht.fr:fullstack/socketio_tp.git"
+  },
+  "keywords": [
+    "socket.io",
+    "redux"
+  ],
+  "author": "Pierre Gambarotto <pierre.gambarotto@enseeiht.fr>",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "browserify": "^16.1.0",
+    "browserify-hmr": "^0.3.6",
+    "http-server": "^0.11.1",
+    "npm-run-all": "^4.1.2",
+    "rollupify": "^0.4.0",
+    "watchify": "^3.10.0"
+  },
+  "browserify": {
+    "transform": [
+      "rollupify"
+    ]
+  },
+  "dependencies": {
+    "redux": "^3.7.2"
+  }
+}

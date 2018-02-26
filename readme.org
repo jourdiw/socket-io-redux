@@ -1,0 +1,35 @@
+* TP socket.io/redux
+
+Le but de ce TP est d'intégrer l'utilisation de socket.io à une application
+gérant son état avec redux ou équivalent.
+
+Le code initial contient juste une application cliente, /sans/ socket.io.
+
+** Tester le code
+
+#+BEGIN_SRC shell
+npm install
+npm run dev
+#+END_SRC
+
+Ouvrez la console sur votre navigateur, puis par exemple:
+
+#+BEGIN_SRC javascript
+let store = window.store
+store.dispatch({type: 1, name: 'charles'})
+store.dispatch({type: 1, name: 'alice'})
+store.dispatch({type: 1, name: 'bob'})
+store.dispatch({type: 3, name: 'mario'})
+#+END_SRC
+
+** Intégration de socket.io
+
+Le but est maintenant de rajouter socket.io pour implémenter les fonctions
+suivantes:
+
+- chaque client peut positionner son nom
+- les noms sont diffusés pour affichage à tous les clients
+
+Une fois ceci fait, abordez les cas difficiles:
+
+- chaque client doit avoir un nom unique, gérez cela au niveau serveur.
